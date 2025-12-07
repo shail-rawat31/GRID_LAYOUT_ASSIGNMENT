@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* NAV */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 35px;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #ff0000;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    display: block;
+    margin: 6px 0;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 15%;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.hero p {
+    margin-top: 18px;
+    max-width: 500px;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.hero-btn {
+    margin-top: 28px;
+    width: fit-content;
+    padding: 12px 32px;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.hero-btn:hover {
+    background: #ff0000;
+}
+
+/* ABOUT (GRID SAME) */
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 100px 12%;
+    gap: 60px;
+}
+
+.about-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about-content p {
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+/* IMAGE */
+.about-image {
+    background: url("123.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border: 8px solid #000;
+}
+
+/* BOTTOM SECTIONS (GRID SAME) */
+.bottom-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* OFFER */
+.offer-section {
+    padding: 80px 50px;
+    background: #000;
+    color: white;
+}
+
+.offer-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.offer-section button {
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #ff0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* WHY CHOOSE */
+.why-choose {
+    padding: 80px 50px;
+    background: #f2f2f2;
+}
+
+.why-choose h2 {
+    font-size: 2.2rem;
+}
+
+.why-choose ul {
+    margin-top: 20px;
+    list-style: square;
+    padding-left: 20px;
+}
+
+.why-choose li {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 15px;
+    font-size: 1.4rem;
+}
+
+.footer-bottom {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVE (GRID SAME) */
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 75px;
+        right: 25px;
+        background: #000;
+        padding: 20px;
+        display: none;
+        flex-direction: column;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 12px 0;
+    }
+
+    .hero {
+        padding: 0 10%;
+    }
+
+    .about-section,
+    .bottom-sections {
+        grid-template-columns: 1fr;
+    }
+}
